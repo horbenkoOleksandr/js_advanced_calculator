@@ -6,33 +6,31 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add(number) {
-      this.result += number;
 
-      return this;
+    add(a, b) {
+      return a + b;
     },
-    subtract(number) {
-      this.result -= number;
 
-      return this;
+    subtract(a, b) {
+      return a - b;
     },
-    multiply(number) {
-      this.result *= number;
 
-      return this;
+    multiply(a, b) {
+      return a * b;
     },
-    divide(number) {
-      this.result /= number;
 
-      return this;
+    divide(a, b) {
+      return a / b;
     },
+
     reset() {
       this.result = 0;
 
       return this;
     },
+
     operate(fn, number) {
-      fn.call(this, number);
+      this.result = fn(this.result, number);
 
       return this;
     },
