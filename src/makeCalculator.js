@@ -32,7 +32,7 @@ function makeCalculator() {
       return this;
     },
     operate(fn, number) {
-      this[fn.name](number);
+      fn.call(this, number);
 
       return this;
     },
